@@ -3,6 +3,7 @@
 ### Install NPM
 ```
 npm install
+npm install -g mongo-seeding-cli
 ```
 
 ### Compile and minifies for development
@@ -13,6 +14,7 @@ npm run start
 ### Run migrations
 ```
 sequelize db:migrate
+seed -u 'mongodb://127.0.0.1:27017/mydb' --drop-database ./example/data
 ```
 
 ### Undo migrations
