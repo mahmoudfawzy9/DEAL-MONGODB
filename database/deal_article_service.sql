@@ -28,14 +28,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `story`
+-- Table structure for table `article`
 --
 
 CREATE TABLE `article` (
   `id` int NOT NULL,
-  `publisher_id` int NOT NULL,
+  `author_id` int NOT NULL,
   `title` varchar(255) NOT NULL,
-  `subtitle` varchar(255) NOT NULL,
+  `jobtitle` varchar(255) NOT NULL,
   `body` varchar(512) NOT NULL,
   `comment` varchar(512) NOT NULL,
   `image_url` varchar(512) NOT NULL,
@@ -49,7 +49,15 @@ CREATE TABLE `article` (
 
 
 -- --------------------------------------------------------
-
+CREATE TABLE `author` (
+  `id` int NOT NULL,
+  `author_id` int NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `job_title` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `is_deleted` tinyint NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 --
@@ -59,7 +67,7 @@ CREATE TABLE `article` (
 
 
 --
--- Indexes for table `story`
+-- Indexes for table `article`
 --
 ALTER TABLE `article`
   ADD PRIMARY KEY (`id`);
